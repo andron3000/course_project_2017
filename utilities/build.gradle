@@ -1,0 +1,24 @@
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'module.utilities',
+                   'Implementation-Version': version
+    }
+}
+
+dependencies {
+    compile 'org.scalanlp:breeze_2.11:0.11.2'
+}
+
+task allJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'module.utilities',
+                   'Implementation-Version': version
+    }
+    baseName = project.name + '-all'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
+}
