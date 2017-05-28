@@ -45,6 +45,12 @@ public class Main {
         double[] x = conjugateGradientSolver.solve().getDenseArray();
         stopwatch.stop();
 
+        System.out.println("Solution:\n");
+        for (double element : x) {
+            System.out.println(element);
+        }
+        System.out.println();
+
         System.out.println("elapsed time = "+ stopwatch.elapsed(MILLISECONDS) + " ms");
     }
 
