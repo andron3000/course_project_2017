@@ -45,7 +45,7 @@ public class Main {
         double[] x = conjugateGradientSolver.solve().getDenseArray();
         stopwatch.stop();
 
-        System.out.println("duration = "+ stopwatch.elapsed(MILLISECONDS) + " ms");
+        System.out.println("elapsed time = "+ stopwatch.elapsed(MILLISECONDS) + " ms");
     }
 
     private static double[] readInputVectorFromFile() throws IOException {
